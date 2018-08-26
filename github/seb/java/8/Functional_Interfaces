@@ -1,0 +1,52 @@
+
+Interfaces fonctionnelles
+
+Références: 
+Ref 1 - Java The Complete Reference (Ninth Edition)
+
+Définition: Interface qui contient qu'une seule méthode abstraite (donc 1 seule action). 
+On appelle aussi les functional interfaces des «SAM type» (Single Abstract Method type).
+Celle-ci définit le type cible (target type) d'une expression Lambda (Ref 1 page 381).
+
+Note importante: une interface fonctionnelle peut spécifier n'importe quelle méthode de la classe «Object» comme 
+equals() sans affecter son status d'interface fonctionnelle. Ces méthodes sont considérées implicites parce qu'elles
+sont automatiquement implémentées par une instance d'une interface fonctionnelle. (voir https://docs.oracle.com/javase/specs/jls/se7/html/jls-9.html#jls-9.2, 3ième bullet)
+
+Ceci est légal (les 3 premières méthodes sont identiques à celle trouvées dans la class Object): 
+
+@FunctionalInterface
+public interface MyInterface {
+	
+	public boolean equals(Object obj);
+	public String toString();
+	public int hashCode();
+
+	public int myMethod();
+
+}
+
+Voir Ref 1 page 382 (NOTE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

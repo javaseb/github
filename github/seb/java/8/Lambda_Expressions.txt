@@ -1,0 +1,260 @@
+
+                                                   - Expression Lambda -
+              
+-----------------------------------------------------------------------------------------------------------------------
+Définition: 
+-----------------------------------------------------------------------------------------------------------------------
+Une expression lambda est une méthode anonyme sans nom qui est utilisé
+pour implémenter une interface fonctionnelle (functional interface). 
+Celles-ci sont souvent référées aussi comme des «closures». (Ref 1 page 382). 
+Le Lambda fait partie des 2 évolutions majeurs de Java: 1 = Génériques (Java 5), 2 = Lambda expresion (Java 8)(Ref 1 page 381)
+Une des particularités des expressions Lambda est de prendre avantage des processeurs multicoeurs (parallel processing) (Ref 3 page 3)
+
+-----------------------------------------------------------------------------------------------------------------------
+Termes: 
+-----------------------------------------------------------------------------------------------------------------------
+
+Bloc lambdas: 
+ce sont les lambdas dont le corps est dans un bloc (bloc body). Ref 1 page 388
+
+Expression lambdas: 
+ce sont des lambdas dont le corps est sur une seule ligne. Ref 1 page 387
+
+Lambda Operator ou Arrow Operateur : 
+La flèche  « -> » dans l'expression Lambda. Elle divise l'expression Lambda en 2 parties (les paramètres du côté droit et les actions de l'expression (Lambda body) du côté gauche. Le « -> » peut être verbalisé comme «devient» ou «va vers»  
+
+Lambda body : 
+Le côté droit du Lambda Operator (->) qui contient les actions de l'expression. 
+Il existe 2 types de corps : 
+ - Une seule ligne : nommé single expression ou expression body
+ - Bloc de Code: nommé statement lambda, bloc body
+
+-----------------------------------------------------------------------------------------------------------------------
+Historique 
+-----------------------------------------------------------------------------------------------------------------------
+- Ref 3 page 2-3
+
+
+-----------------------------------------------------------------------------------------------------------------------
+Lois des lambda: 
+-----------------------------------------------------------------------------------------------------------------------
+
+loi 1 : Le type cible (retourné) doit être une interface fonctionnelle. 
+
+      int x = () -> 2; //ILLÉGAL : le type «int» n'est pas une interface fonctionnelle.
+
+    	Predicate<Integer> p = i -> i > 2; //LÉGAL : Predicate est une interface fonctionnelle
+    	if (p.test(6)) {
+    		//...
+    	}
+
+-----------------------------------------------------------------------------------------------------------------------
+
+loi 2  (Ref 3 page 20): S'il y a 1 seul paramètre on peut ommettre les parenthèses. Pour toutes les autres cas de figure
+on doit mettre des parenthèses: 
+
+aucun paramètre:
+ () -> 34;      // LÉGAL : 0 paramètre = **parenthèses obligatoires** (aucune autre alternative)	
+
+1 paramètre: 
+  i -> i > 2;   // LÉGAL : 1 paramètre sans parenthèses
+ (i) -> i > 2;  // LÉGAL : 1 paramètre avec parenthèse
+
+2 paramètres ou plus:
+ x,y -> true;   // ILLÉGAL : 2 paramètres ou plus doivent être entre parenthèses
+(x,y) -> true;  // LÉGAL
+
+-----------------------------------------------------------------------------------------------------------------------
+
+loi 3 : On peut déclarer aussi les types des paramètres. Cependant, si un des paramètres le type est déclaré il faut alors que tous les autres paramètres leurs types soient déclarés. 
+
+(int x, y) -> true;      // ILLÉGAL : un type de déclaré (int x) alors les autres paramètres doivent aussi déclarer leurs types
+(int x, int y) -> true;  // LÉGAL   : types déclarés pour toutes les variables
+
+Note: exactement comme les paramètres dans une méthode, on peut ajouter les autres spécifications (ex: final, annotation) à un paramètre (Ref 3 page 20 au bas): 
+
+(final int x, int y) -> true; // LÉGAL
+
+-----------------------------------------------------------------------------------------------------------------------
+
+loi 4 : Si l'expression lambda est de type «bloc lambda» (avec des accolades), les règles pour le keyword «return» s'appliquent de la même façon que les méthodes (si la méthode de l'interface fonctionnelle a un type de retour alors l'expression doit retourner ce type)
+
+
+Predicate<Integer> p1 = i -> { 
+    									          i > 2; //ILLÉGAL doit retourner un booléan
+    								          }; 
+
+
+Predicate<Integer> p1 = i -> { 
+    									         return i > 2; //LÉGAL
+    								          }; 
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Loi 5 : Dans une expresion lambda de type expression lambda (sur une seule ligne sans accolade), le keyworkd «return« est implicite. 
+
+
+Predicate<Integer> p2 = (i) -> return i > 2; //ILLÉGAL on ne doit pas mettre le «return» dans une «expression lambda»
+
+Predicate<Integer> p2 = (i) -> i > 2; //LÉGAL ici le return est implicite et retourne un booléan. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Références: 
+Ref 1 - Java The Complete Reference Ninth Edition
+Ref 2 - The Java Virtual Machine Specification (Java SE 8 Edition)
+Ref 3 - Mastering Lambdas: Java Programming in a Multicore World
+Ref 4 - Functional Programming in Java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

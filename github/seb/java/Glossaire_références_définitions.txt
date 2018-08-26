@@ -1,0 +1,21 @@
+References: 
+Ref 1 - Java The Complete Reference Ninth Edition
+Ref 2 - The Java Virtual Machine Specification (Java SE 8 Edition)
+Ref 3 - Mastering Regular Expressions
+
+Closures: @see Lambda Expression. Ref 1, page 382
+
+Lambda Operator ou Arrow Operator = la flèche « -> » dans l'expression lambda. Celle-ci divise l'expression en 2 parties: Du côté droit les paramètres et du côté gauche les actions de l'expression lambda (Ref 1 page 382).
+
+SAM type = Single Abstrace Method type (@see functionnal interface). Ref 1, page 382
+
+
+
+
+
+
+
+
+Scope: la porté de quelque chose (variables, etc.). Permet de déterminer si une variable par exemple est visible/accessible dans 
+un contexte donnée. 
+

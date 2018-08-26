@@ -1,0 +1,66 @@
+References: 
+Ref 1 - Java The Complete Reference Ninth Edition
+Ref 2 - The Java Virtual Machine Specification (Java SE 8 Edition)
+Ref 3 - Mastering Regular Expressions
+
+-------------------------------------------------------------------------------------------
+Question: - Comment trouver le nombre de coeurs (processeur) par programmation en Java?
+
+Réponse: Runtime.getRuntime().availableProcessors();
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+Question: - Est-ce qu'une Interface étend la classe Object? 
+
+Réponse non. Cependant, une instance d'une interface implémente les méthodes de la classe object implicitement. 
+
+interface A {}
+ 
+class InterfaceAndObjectClass
+{
+    public static void main(String[] args)
+    {
+        A a = null; //interface
+        a.equals(null); //LÉGAL
+        a.hashCode();   //LÉGAL
+        a.toString();   //LÉGAL
+    }
+}
+
+Une interface déclare implicitement une méthode abstraite (publique) pour chaque méthode déclaré dans la class Object
+(à moins que la même méthode avec la même signature soit déclaré explicitement par l'interface. 
+(voir point 9.2 le 3ième point : https://docs.oracle.com/javase/specs/jls/se7/html/jls-9.html#jls-9.2)
+
+-------------------------------------------------------------------------------------------
+
+
+
+Question: - Quelles sont les versions d'Unicode utilisées?
+
+Réponse: 
+
+- Java 8 Unicode Version 6.0.0 (Ref 2- page 5)
+- Java 5 Unicode Version 4.0.0 (Ref 3- page 369)
+- Java 1.4.2 Unicode Version 3.0.0 (Ref 3- page 369)
+
+Note: on peut trouver les spécifications ici: http://www.unicode.org/versions/enumeratedversions.html
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

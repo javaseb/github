@@ -1,0 +1,49 @@
+
+
+String pooling (utilisé en partie par le compilateur): 
+
+-lorsque 2 valeurs déclarées sont identiques ils ont la même référence mémoire.
+
+1- String x = "ABC"; //mis dans le pool... le compilateur connait la valeur
+2- String x = "ABC" + variableY; //pas mis dans le pool car, le compilateur ne connait pas la valeur complète. 
+
+example 1: 
+
+    @Test
+    public void sameReference() {
+        String a = "mot";
+        String b = "mot";
+        assertTrue("The 2 strings HAVE the same reference.", a == b); // true, they have the same memory reference
+        assertTrue("The 2 strings are equals.", a.equals(b)); // true the 2 variables have the same value.
+    }
+
+example 2:
+
+    @Test
+    public void notTheSameReference() {
+        String a = "DE";
+        String b = "D";
+        String c = "E";
+        String d = b + c;
+        assertFalse("The 2 strings HAVE NOT the same reference.", a == d); // false, the d string is not in the pool
+                                                                           // and has not the same memory reference.
+        assertTrue("The 2 strings are equals.", a.equals(d)); // true the 2 variables have the same value.
+    }
+
+example 3: it's possible to put a String value into the String pool by using the intern() method
+
+    @Test
+    public void sameReferenceWithInternMethod() {
+        String a = "DE";
+        String b = "D";
+        String c = "E";
+        String d = b + c;
+        d = d.intern(); // put the d String value into the pool
+        assertTrue("The 2 strings HAVE the same reference.", a == d); // true, they have the same memory reference
+        assertTrue("The 2 strings are equals.", a.equals(d));  // true the 2 variables have the same value.
+    }
+
+
+
+
+

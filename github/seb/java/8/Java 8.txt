@@ -1,0 +1,10 @@
+
+
+What's new?
+
+java.util.Objects
+
+méthode 		
+    Objects.requireNonNull(theObject);
+    Objects.requireNonNull(theObject, "The object must not be null.");
+		Objects.requireNonNull(new Object(), () -> "The object must not be null");s
