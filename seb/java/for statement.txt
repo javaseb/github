@@ -1,13 +1,13 @@
 
-//this code is legal
-public static void forInfinitLoop(){
+	//this code is legal
+	public static void forInfinitLoop(){
 		for(;;){
 			System.out.println("infinit loop");
 		}
 	}
   
- //this code is legal
- public static void noRunLoop(){
+ 	//this code is legal
+ 	public static void noRunLoop(){
 		boolean run = false;
 		for(;run;){
 			System.out.println("this code will not be shown.");
