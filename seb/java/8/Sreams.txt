@@ -14,3 +14,10 @@ IntStream : Stream de int (primitive)
 
 
 
+https://www.baeldung.com/java-spliterator:
+//création d'un nombre d'objet (ici 35000) 
+public static List<Article> generateElements() {
+    return Stream.generate(() -> new Article("Java"))
+      .limit(35000)
+      .collect(Collectors.toList());
+}
