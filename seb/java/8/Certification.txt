@@ -2,3 +2,7 @@
 Check if this line compile and what is the value of x.
 
 int x = 21/2;
+
+
+
+lengh ou size pour array et varargs
