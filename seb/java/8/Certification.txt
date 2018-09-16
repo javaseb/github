@@ -13,7 +13,7 @@ Attention, ceci ne compile pas :
 
 int x = 21.2/2;
 
-il faut plutôt faire un cast: 
+il faut plutôt faire un cast (à cause du 21.2): 
 
 int x = (int) 21.2/2;
 
