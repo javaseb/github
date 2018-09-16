@@ -3,6 +3,47 @@ Check if this line compile and what is the value of x.
 
 int x = 21/2;
 
+ok, ça compile. Voici ce que j'ai remarqué: 
+
+si on fait 1/2 (qui donne normalement .5) la réponse sera 0. Même si on avait un résultat tel que 1.9 le language n'arrondit pas. Il prend l'entier seulement (donc 1 dans ce cas là). 
+
+Attention, ceci ne compile pas : 
+
+int x = 21.2/2;
+
+il faut plutôt faire un cast: 
+
+int x = (int) 21.2/2;
+
+--------------------------------------------------------------------------------------------------------------
+
+Le cas du ++ (pré ou post dans un if ou un while): 
+
+    //ceci affiche la valeur 2
+		int x=2;
+		if (x++ < 3){
+			System.out.println(x);
+		}
+    
+    //ceci n'affiche rien
+    int x=2;
+		if (++x < 3){
+			System.out.println(x);
+		}
+    
+    //ceci affiche 6
+    int x = 5; 
+		while (x++ < 6){
+			System.out.println(x);
+			x++;
+		}
+    
+    //ceci affiche rien
+    int x = 5; 
+		while (++x < 6){
+			System.out.println(x);
+			x++;
+		}
 
 
 lengh ou size pour array et varargs
