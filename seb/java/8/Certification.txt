@@ -5,7 +5,9 @@ int x = 21/2;
 
 ok, ça compile. Voici ce que j'ai remarqué: 
 
-si on fait 1/2 (qui donne normalement .5) la réponse sera 0. Même si on avait un résultat tel que 1.9 le language n'arrondit pas. Il prend l'entier seulement (donc 1 dans ce cas là). 
+si on fait 1/2 (qui donne normalement .5) la réponse sera 0. 
+Même si on avait un résultat tel que 1.9 le language n'arrondit pas. 
+Il prend l'entier seulement (donc 1 dans ce cas là). 
 
 Attention, ceci ne compile pas : 
 
