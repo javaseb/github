@@ -21,7 +21,7 @@ int x = (int) 21.2/2;
 
 Le cas du ++ (pré ou post dans un if ou un while): 
 
-    //ceci affiche la valeur 2
+    //ceci affiche la valeur 3
 		int x=2;
 		if (x++ < 3){
 			System.out.println(x);
