@@ -1,4 +1,36 @@
 
+
+Analyse complète du code: 
+
+
+- Trouver les méthodes static et non statique
+- trouver les variables static et non statique. 
+
+
+
+** Règle 1: 1 méthode statique ne peut accéder à une variable non static **
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Une méthode Main(String... args) peut être déclarée finale
+
+ceci est valide: 
+
+public static final void main (String[] data);
+
+
+
+
+
+
+
+
+
+
+
+
 Check if this line compile and what is the value of x.
 
 int x = 21/2;
